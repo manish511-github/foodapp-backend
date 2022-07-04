@@ -10,12 +10,8 @@ app.use(express.static('public/build'));
 const cookieParser=require('cookie-parser'); 
 app.use(express.json()); //global middleware 
 
-const port=process.env.PORT || 4000;
-app.listen(port,function(){
-    console.log(`server listening on port ${port}`); 
-});
-
-
+const PORT=process.env.PORT||'8080'
+app.set("port",PORT);
 
 
 
