@@ -2,6 +2,8 @@
     const mongoose = require("mongoose");
     const db_link='mongodb+srv://admin:maneesh@cluster0.qqu7opm.mongodb.net/?retryWrites=true&w=majority';
 
+
+
     mongoose
       .connect(db_link)
       .then(function (db) {

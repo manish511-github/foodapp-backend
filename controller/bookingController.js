@@ -1,4 +1,4 @@
-let SK="sk_test_51LHlQFSIK009yCzo3Hae2Zl150g0YPEjay6PgSK8fNnWwExfqa2CDeTfCY16OPmzPhvPBCB13ANJDq2vWmX2SyYS00llyUTtNz";
+let SK="sk_test_pL1X84CZrOSOYRkyyvKuCwR000a36t5jwK";
 const stripe=require('stripe')(SK);
 const planModel = require("../models/planModel");
 const userModel = require("../models/userModel");
@@ -27,8 +27,8 @@ module.exports.createSession=async function createSession(req,res){
         ],
         // dev => http
         // production => https 
-        success_url: `${req.protocol}://${req.get("host")}/profile`,
-        cancel_url: `${req.protocol}://${req.get("host")}/profile`
+        success_url: `${YOUR_DOMAIN}/success.html`,
+        cancel_url: `${YOUR_DOMAIN}/cancel.html`,
       })
       res.status(200).json({
         status: "success",

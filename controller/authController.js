@@ -135,17 +135,17 @@ module.exports.signup = async function signup(req, res) {
       if (user) {
         //createResetToken is used to create a new token
         const resetToken = user.createResetToken();
-        // http://abc.com/resetpassword/resetToken
+       // http://abc.com/resetpassword/resetToken
         let resetPasswordLink = `${req.protocol}://${req.get(
           "host"
         )}/resetpassword/${resetToken}`;
         //send email to the user
-        //nodemailer
-        // let obj={
-        //   resetPasswordLink:resetPasswordLink,
-        //   email:email
-        // }
-        // sendMail("resetpassword",obj);
+        // nodemailer
+        let obj={
+          resetPasswordLink:resetPasswordLink,
+          email:email
+        }
+        sendMail("resetpassword",obj);
         return res.json({
           mesage: "reset password link sent",
           data:resetPasswordLink
